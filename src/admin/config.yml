@@ -16,3 +16,19 @@ collections:
       - {label: "Excerpt", name: "excerpt", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "works"
+    label: "Works"
+    folder: "works"
+    create: true
+    slug: "{{slug}}"
+    
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Chinese Title", name: "title_zh", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Cover Image",
+          name: "cover",
+          widget: "image",
+          }
+      - {label: "Body", name: "body", widget: "markdown"}
