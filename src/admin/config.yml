@@ -13,6 +13,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Chinese Title", name: "title_zh", widget: "string"}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -21,7 +22,6 @@ collections:
     folder: "works"
     create: true
     slug: "{{slug}}"
-    
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Chinese Title", name: "title_zh", widget: "string"}

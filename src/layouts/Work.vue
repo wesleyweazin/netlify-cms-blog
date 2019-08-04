@@ -5,15 +5,6 @@
       slot
 </template>
 
-
-<static-query>
-query {
-  metaData {
-    siteName
-  }
-}
-</static-query>
-
 <style>
 @import url(https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.min.css);
 .markdown-body {
@@ -29,12 +20,12 @@ query {
 			padding: 15px;
 		}
 	}
-.layout {
+/* .layout {
   max-width: 760px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 
 .header {
   display: flex;

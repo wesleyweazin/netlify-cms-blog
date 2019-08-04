@@ -63,5 +63,15 @@ module.exports = {
         }
       }
     },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'works/**/*.md',
+        typeName: 'Work',
+        remark: {
+          // remark options
+        }
+      }
+    },
   ]
 }
