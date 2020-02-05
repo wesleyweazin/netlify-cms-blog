@@ -26,20 +26,26 @@ module.exports = {
       ]
     }
   },
-
-  plugins: [
-    {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'posts/**/*.md',
-        typeName: 'Post',
-        remark: {
-          plugins: [
-            // ...local plugins
-          ]
-        }
+  templates: {
+    Post: [
+      {
+        path:  '/blog/:year/:month/:title',
       }
-    },
+    ]
+  },
+  plugins: [
+    // {
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     path: 'posts/**/*.md',
+    //     typeName: 'Post',
+    //     remark: {
+    //       plugins: [
+    //         // ...local plugins
+    //       ]
+    //     }
+    //   }
+    // },
     {
       use: `gridsome-plugin-netlify-cms`,
       options: {
@@ -73,5 +79,15 @@ module.exports = {
         }
       }
     },
-  ]
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'shots/**/*.md',
+        typeName: 'Shot',
+        remark: {
+          // remark options
+        }
+      }
+    },
+  ],
 }
