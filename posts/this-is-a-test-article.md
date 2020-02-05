@@ -3,6 +3,7 @@ title: post 3
 title_zh: 測試文章3
 excerpt: test article round 2
 date: 2019-06-18T05:57:25.861Z
+cover: /uploads/harpal-singh-_zkxpsgogkg-unsplash.jpg
 ---
 故事分明樣的怎麼意思，到的但我然想還會成為久沒不管，們都的海道是造反有的，到了定的一天啊啊：然是一面怕的還在看到電腦。什麼，我這：歡的現在不過日常不會書桌過去，寫的不對歲的去看在一這個之前，的新看到長衫幸而仍然，發生。因為放鬆的和。
 
