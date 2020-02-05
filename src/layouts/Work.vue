@@ -1,5 +1,6 @@
 <template lang="pug">
   .layout
+    h1 work layout
     Header
     .markdown-body
       slot

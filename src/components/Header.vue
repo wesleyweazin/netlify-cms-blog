@@ -4,8 +4,10 @@ header.header
             g-link(to='/') {{ $static.metaData.siteName }}
         nav.nav
             g-link.nav__link(to='/') Home
+            g-link.nav__link(to='/shots') Shots
+            g-link.nav__link(to='/posts') Posts
             g-link.nav__link(to='/about') About
-            g-link.nav__link(to='/team') Team
+            
 </template>
 
 <static-query>

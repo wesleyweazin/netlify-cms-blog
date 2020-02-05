@@ -1,7 +1,8 @@
 <template lang="pug">
-    PostLayout
-        h1 {{$page.post.title}}
-        div(v-html='$page.post.content')
+  PostLayout
+      h1 post template
+      h1 {{$page.post.title}}
+      div(v-html='$page.post.content')
 </template>
 <page-query>
 query Post ($path:String!){

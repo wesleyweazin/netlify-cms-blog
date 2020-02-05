@@ -1,5 +1,6 @@
 <template lang="pug">
     WorkLayout
+        h1 work template
         h1 {{$page.work.title}}
         div(v-html='$page.work.content')
 </template>

@@ -1,5 +1,6 @@
 <template lang="pug">
   .layout
+    .h1 post layout
     Header
     .markdown-body
       slot
@@ -34,17 +35,5 @@ query {
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
 }
 </style>

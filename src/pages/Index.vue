@@ -1,21 +1,16 @@
 <template lang="pug">
 Layout
-        .introduce
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-        .container
-            .flex
-                .w-1/3 123 
-                .w-1/3 123
-                .w-1/3 123
-        .work-grid
-            .work-grid__item(v-for='n in 10')
-                a(href="#").link
-                    img().image
-                p.name this is test title
+    .introduce
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+    .work-grid
+        .work-grid__item(v-for='work in $page.works.edges' :key='work.id')
+            g-link(:to="work.node.path").link
+                img().image
+            p.name {{work.node.title}}
 
-        ul
-            li(v-for='work in $page.works.edges' :key='work.id')
-                g-link(:to="work.node.path") {{work.node.title}}
+    //- ul
+    //-     li(v-for='work in $page.works.edges' :key='work.id')
+    //-         g-link(:to="work.node.path") {{work.node.title}}
 </template>
 
 <script>
