@@ -5,12 +5,9 @@ Layout
     .work-grid
         .work-grid__item(v-for='work in $page.works.edges' :key='work.id')
             g-link(:to="work.node.path").link
-                img().image
+                .image(:style="'background-image:url('+ work.node.cover +')'")
             p.name {{work.node.title}}
 
-    //- ul
-    //-     li(v-for='work in $page.works.edges' :key='work.id')
-    //-         g-link(:to="work.node.path") {{work.node.title}}
 </template>
 
 <script>
@@ -28,6 +25,7 @@ query Works{
         title
         content
         path
+        cover
       }
     }
   }
@@ -36,8 +34,10 @@ query Works{
 
 <style lang="scss">
 .introduce {
+    padding: 0 2rem;
+    margin-bottom:  2rem;
     p {
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
 }
 
@@ -57,10 +57,20 @@ query Works{
         }
 
         .image {
-            height: 0;
-            padding-top: 100%;
-            background-color: #ccc;
-            border: 1px solid #ccc;
+            width: 100%;
+            border: 1px solid red;
+            background-size: cover;
+            background-position: center;
+            &:before {
+                content: '';
+                padding-top: 100%;
+                float: left;
+            }
+            &:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
         }
 
         .name {

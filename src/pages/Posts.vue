@@ -1,7 +1,11 @@
 <template lang="pug">
 Layout
   h1 Posts
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.
+  .post-list
+    a.post-list__item(v-for='post in $page.posts.edges' :key='post.id')
+      .post-list__item__image(:style="'background-image:url('+ post.node.cover +')'")
+      .post-list__item__heading {{post.node.title}}
+      .post-list__item__content(v-html='post.node.content.substring(0,100)')
   ul
       li(v-for='post in $page.posts.edges' :key='post.id')
           g-link(:to="post.node.path") {{post.node.title}}
@@ -24,7 +28,7 @@ query Posts{
 <script>
 export default {
     metaInfo: {
-        title: 'blog'
+        title: 'posts'
     }
 }
 </script>

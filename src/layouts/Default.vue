@@ -15,7 +15,7 @@ body {
 }
 
 .layout {
-  max-width: 940px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0;
 }
@@ -25,7 +25,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  height: 80px;
+  height: 100px;
 }
 
 .nav__link {
