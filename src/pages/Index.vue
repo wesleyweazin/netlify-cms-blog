@@ -3,38 +3,48 @@ Layout
     .introduce
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
     .work-grid
-        .work-grid__item(v-for='work in $page.works.edges' :key='work.id')
-            g-link(:to="work.node.path").link
-                .image(:style="'background-image:url('+ work.node.cover +')'")
-            p.name {{work.node.title}}
+        transition( name='fade')
+            .work-grid__item(v-for='work in $page.entries.edges' :key='work.id')
+                g-link(:to="work.node.path").link
+                    .image(:style="'background-image:url('+ work.node.cover +')'")
+                p.name {{work.node.title}}
+    Pagination(baseUrl="" :currentPage="$page.entries.pageInfo.currentPage" :totalPages="$page.entries.pageInfo.totalPages" :maxVisibleButtons="5" v-if="$page.entries.pageInfo.totalPages" ) 1
 
 </template>
 
 <script>
+import Pagination from "~/components/Pagination.vue";
 export default {
+  components: {
+      Pagination
+  },
     metaInfo: {
         title: 'Hello, world!'
     }
 }
 </script>
 <page-query>
-query Works{
-  works: allWork{
-    edges{
-      node{
-        title
-        content
-        path
-        cover
-      }
+query($page:Int) {
+    entries: allWork(perPage:1, page: $page)@paginate{
+        pageInfo{
+          currentPage
+          perPage
+          totalPages
+        }
+        edges{
+            node{
+                title
+                content
+                path
+                cover
+            }
+        }
     }
-  }
 }
 </page-query>
 
 <style lang="scss">
 .introduce {
-    padding: 0 2rem;
     margin-bottom:  2rem;
     p {
         font-size: 1rem;
@@ -58,7 +68,6 @@ query Works{
 
         .image {
             width: 100%;
-            border: 1px solid red;
             background-size: cover;
             background-position: center;
             &:before {
