@@ -3,7 +3,7 @@ Layout
     .introduce
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
     .work-grid
-        transition( name='fade')
+        transition(name='fade')
             .work-grid__item(v-for='work in $page.entries.edges' :key='work.id')
                 g-link(:to="work.node.path").link
                     .image(:style="'background-image:url('+ work.node.cover +')'")
