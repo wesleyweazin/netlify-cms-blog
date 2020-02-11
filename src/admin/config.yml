@@ -8,7 +8,7 @@ public_folder: "/uploads"
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "posts"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
@@ -20,7 +20,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "works"
     label: "Works"
-    folder: "works"
+    folder: "content/works"
     create: true
     slug: "{{slug}}"
     fields:
@@ -32,7 +32,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "shots"
     label: "Shots"
-    folder: "shots"
+    folder: "content/shots"
     create: true
     slug: "{{slug}}"
     fields:

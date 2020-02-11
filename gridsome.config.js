@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Designer',
   module: {
     rules: [
       // ... other rules omitted
@@ -34,18 +34,6 @@ module.exports = {
     ]
   },
   plugins: [
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'posts/**/*.md',
-    //     typeName: 'Post',
-    //     remark: {
-    //       plugins: [
-    //         // ...local plugins
-    //       ]
-    //     }
-    //   }
-    // },
     {
       use: `gridsome-plugin-netlify-cms`,
       options: {
@@ -62,7 +50,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'posts/**/*.md',
+        path: 'content/posts/**/*.md',
         typeName: 'Post',
         remark: {
           // remark options
@@ -72,7 +60,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'works/**/*.md',
+        path: 'content/works/**/*.md',
         typeName: 'Work',
         remark: {
           // remark options
@@ -82,7 +70,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'shots/**/*.md',
+        path: 'content/shots/**/*.md',
         typeName: 'Shot',
         remark: {
           // remark options
