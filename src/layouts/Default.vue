@@ -2,6 +2,7 @@
   .layout
     Header
     slot
+    Footer
 
 </template>
 
@@ -14,11 +15,10 @@ body {
   line-height: 1.5;
 }
 
-.layout {
-  max-width: 940px;
+/* .layout {
   margin: 0 auto;
   padding: 0;
-}
+} */
 
 .header {
   display: flex;

@@ -1,12 +1,12 @@
 <template lang="pug">
-.paginations
-  ul
-    li(v-if='!isFirstPage(currentPage, totalPages)')
-      g-link(:to='previousPage(currentPage,totalPages)' tabindex='-1') &laquo;
-    li(v-for='page in pages' :key='page.name')
+.Page.navigation.d-flex.justify-content-center
+  ul.pagination
+    li.page-item(v-if='!isFirstPage(currentPage, totalPages)')
+      g-link.page-link(:to='previousPage(currentPage,totalPages)' tabindex='-1') &laquo;
+    li.page-item(v-for='page in pages' :key='page.name')
       g-link.page-link(:to='page.link' :aria-label='page.name' :aria-current='page.name') {{page.name}}
-    li(v-if='!isLastPage(currentPage, totalPages)')
-      g-link(:to='nextPage(currentPage,totalPages)' tabindex='-1') &raquo;
+    li.page-item(v-if='!isLastPage(currentPage, totalPages)')
+      g-link.page-link(:to='nextPage(currentPage,totalPages)' tabindex='-1') &raquo;
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
     maxVisibleButtons: {
       type: Number,
       required: false,
-      default: 3
+      default: 5
     }
   },
   methods: {
@@ -69,18 +69,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.paginations {
-  display: flex;
-  ul {
-    margin: 0 auto;
-    display: flex;
-    list-style: none;
-    li {
-      width: 2rem;
-    }
-  }
-  
-}
-</style>

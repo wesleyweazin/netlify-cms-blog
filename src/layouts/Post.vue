@@ -1,5 +1,5 @@
 <template lang="pug">
-  .layout
+  .container
     .h1 post layout
     Header
     .markdown-body
@@ -9,7 +9,7 @@
 
 <static-query>
 query {
-  metaData {
+  metadata {
     siteName
   }
 }
@@ -30,10 +30,4 @@ query {
 			padding: 15px;
 		}
 	}
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
 </style>

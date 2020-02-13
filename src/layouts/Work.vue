@@ -1,6 +1,5 @@
 <template lang="pug">
-  .layout
-    h1 work layout
+  .contaier
     Header
     .markdown-body
       slot
@@ -21,22 +20,4 @@
 			padding: 15px;
 		}
 	}
-/* .layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-} */
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
 </style>

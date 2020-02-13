@@ -29,7 +29,7 @@ module.exports = {
   templates: {
     Post: [
       {
-        path:  '/blog/:year/:month/:title',
+        path:  '/posts/:year/:month/:title',
       }
     ]
   },

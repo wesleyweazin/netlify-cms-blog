@@ -9,13 +9,15 @@
   "dependencies": {
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
+    "bootstrap": "^4.4.1",
     "gridsome": "^0.7.11",
     "gridsome-plugin-netlify-cms": "^1.0.7",
     "gridsome-plugin-sass-resources-loader": "0.0.2",
     "netlify-cms": "^2.9.1",
-    "tailwindcss": "^1.1.2"
+    "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.0.6",
     "eslint": "^6.8.0",
     "eslint-plugin-gridsome": "^1.4.0",
     "gridsome-plugin-pug": "0.0.3",

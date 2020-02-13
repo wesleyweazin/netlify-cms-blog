@@ -1,12 +1,22 @@
 <template lang="pug">
 Layout
-    h1 文章列表
-    .post-list
-        a.item(v-for='post in $page.posts.edges' :key='post.id')
-            .item__content
-                .item__content__title {{post.node.title_zh}}
-                .item__content__text(v-html='post.node.content.substring(0,100)')
-            .item__image(:style="'background-image:url('+ post.node.cover +')'")
+    .container
+        .row.mb-5
+            .col-sm-12.text-center
+                h1 文章列表
+        .row
+            .col-sm-12.post-list
+                .row.item(v-for='post in $page.posts.edges' :key='post.id')
+                    .col-sm-8
+                        .item__content
+                            p.text-muted.small.mb-1 {{post.node.date}}
+                            h3.item__content__title.mb-2 {{post.node.title_zh}}
+                            p.item__content__text(v-html='post.node.content.substring(0,100)')
+                            a.item__content__link(:href='post.node.path') 繼續閱讀
+                    .col-sm-4
+                        .item__image
+                            g-image(:src='post.node.cover')
+                    //- .item__image(:style="'background-image:url('+ post.node.cover +')'")
 </template>
 
 <page-query>
@@ -18,6 +28,7 @@ query Posts{
         content
         path
         cover
+        date(format: "MMMM DD, YYYY")
       }
     }
   }
@@ -35,32 +46,23 @@ export default {
 <style lang="scss" scoped>
 .post-list {
     .item {
-        display: flex;
         margin-bottom: 2rem;
-
         &__image {
-            width: 30%;
-            background-size: cover;
-
-            &:before {
-                content: '';
-                padding-top: 62.5%;
-                float: left;
-            }
-
-            &:after {
-                content: '';
-                display: block;
-                clear: both;
+            height: 0;
+            padding-top: 62.5%;
+            position: relative;
+            img {
+                width: 100%;
+                height:  100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         }
-
         &__content {
-            width: 70%;
-            padding-right: 1rem;
-
             &__title {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 font-weight: 700;
             }
         }
