@@ -10,6 +10,7 @@ Layout
                     .col-sm-8
                         .item__content
                             p.text-muted.small.mb-1 {{post.node.date}}
+                            h3.item__content__tag.mb-2 {{post.node.tag}}
                             h3.item__content__title.mb-2 {{post.node.title_zh}}
                             p.item__content__text(v-html='post.node.content.substring(0,100)')
                             a.item__content__link(:href='post.node.path') 繼續閱讀
@@ -29,6 +30,7 @@ query Posts{
         path
         cover
         date(format: "MMMM DD, YYYY")
+        tags
       }
     }
   }

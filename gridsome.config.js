@@ -52,6 +52,13 @@ module.exports = {
       options: {
         path: 'content/posts/**/*.md',
         typeName: 'Post',
+        refs: {
+          // Create a Tag content type and its nodes automatically.
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        },
         remark: {
           // remark options
         }
