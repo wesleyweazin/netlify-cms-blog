@@ -15,10 +15,10 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Chinese Title", name: "title_zh", widget: "string"}
       - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["news"]}
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Cover Image",name: "cover",widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list", default: ["news"]}
   - name: "works"
     label: "Works"
     folder: "content/works"
