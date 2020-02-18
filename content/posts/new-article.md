@@ -3,7 +3,9 @@ title: post 1
 title_zh: 新文章
 excerpt: test content
 tags:
-  - 創意、創意思考、設計
+  - 創意
+  - 創意思考
+  - 設計
   - designer
 date: 2019-07-31T12:12:56.552Z
 cover: /uploads/edho-pratama-t6fdn60bmwy-unsplash.jpg
