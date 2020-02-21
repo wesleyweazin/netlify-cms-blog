@@ -1,9 +1,10 @@
 <template lang="pug">
-  .container
-    .h1 post layout
-    Header
-    .markdown-body
-      slot
+.container
+	.row
+		.col-12
+			Header
+			.markdown-body
+			slot
 </template>
 
 

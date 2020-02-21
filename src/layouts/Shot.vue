@@ -1,6 +1,7 @@
 <template lang="pug">
-  .container
-    Header
+.container
+    .row
+        Header
     .row
       .col-sm-12
         slot

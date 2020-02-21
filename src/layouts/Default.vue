@@ -1,9 +1,14 @@
 <template lang="pug">
-  .layout
-    Header
-    slot
-    Footer
-
+  .container.layout
+    .row
+      .col-12
+        Header
+    .row
+      .col-12
+        slot
+    .row
+      .col-12
+        Footer
 </template>
 
 

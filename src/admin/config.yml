@@ -42,4 +42,3 @@ collections:
       - {label: "Excerpt", name: "excerpt", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "date"}
       - {label: "Cover Image",name: "cover",widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}

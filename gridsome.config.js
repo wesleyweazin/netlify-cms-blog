@@ -27,24 +27,31 @@ module.exports = {
     }
   },
   templates: {
-    Post: [
-      {
-        path:  '/posts/:year/:month/:title',
-      }
-    ]
+    Post: [{
+      path: '/posts/:year/:month/:title',
+    }]
   },
-  plugins: [
-    {
+  plugins: [{
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`
       }
     },
+    // fix paths
+    {
+      use: 'gridsome-plugin-netlify-cms-paths',
+      options: {
+        contentTypes: ['Post','Work'],
+        coverField: 'cover'
+      }
+    },
     {
       use: 'gridsome-plugin-pug',
       options: {
-          pug: { /* Options for `pug-plain-loader` */ },
-          pugLoader: { /* Options for `pug-loader` */ }
+        pug: {
+          /* Options for `pug-plain-loader` */ },
+        pugLoader: {
+          /* Options for `pug-loader` */ }
       }
     },
     {
@@ -52,11 +59,12 @@ module.exports = {
       options: {
         path: 'content/posts/**/*.md',
         typeName: 'Post',
+        coverField: 'cover',
         refs: {
-          // Create a Tag content type and its nodes automatically.
           tags: {
             typeName: 'Tag',
-            create: true
+            route: '/tag/:id',
+            create: true,
           }
         },
         remark: {
@@ -69,6 +77,7 @@ module.exports = {
       options: {
         path: 'content/works/**/*.md',
         typeName: 'Work',
+        coverField: 'cover',
         remark: {
           // remark options
         }

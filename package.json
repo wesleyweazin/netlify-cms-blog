@@ -12,6 +12,7 @@
     "bootstrap": "^4.4.1",
     "gridsome": "^0.7.11",
     "gridsome-plugin-netlify-cms": "^1.0.7",
+    "gridsome-plugin-netlify-cms-paths": "^0.3.1",
     "gridsome-plugin-sass-resources-loader": "0.0.2",
     "netlify-cms": "^2.9.1",
     "tailwindcss": "^1.2.0"
@@ -23,7 +24,7 @@
     "gridsome-plugin-pug": "0.0.3",
     "gridsome-plugin-tailwindcss": "^2.2.26",
     "node-sass": "^4.12.0",
-    "pug": "^2.0.3",
+    "pug": "^2.0.4",
     "sass-loader": "^7.1.0",
     "sass-resources-loader": "^2.0.1",
     "vue-eslint-parser": "^7.0.0"
