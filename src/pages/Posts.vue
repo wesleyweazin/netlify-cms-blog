@@ -11,7 +11,7 @@ DefaultLayout
                         p.text-muted.small.mb-1 {{post.node.date}}
                         h3.item__content__title.mb-2 {{post.node.title_zh}}
                         .item__content__tags
-                            g-link(v-for="tag in post.node.tags" :to='tag.path').text-secondary.mr-2 {{tag.id}}
+                            g-link(v-for="tag in post.node.tags" :to='tag.path' :key='tag.id').text-secondary.mr-2 {{tag.id}}
                         p.item__content__text(v-html='post.node.content.substring(0,100)')
                         a.item__content__link(:href='post.node.path') 繼續閱讀
                 .col-sm-4
