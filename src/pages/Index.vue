@@ -1,5 +1,5 @@
 <template lang="pug">
-Layout.home
+DefaultLayout.home
     .row.d-flex.justify-content-center.my-5
         .col-sm-12.col-md-10.text-center
             h1 Hello World
@@ -8,10 +8,7 @@ Layout.home
         .col-sm-12.col-md-4(v-for='work in $page.allWork.edges' :key='work.id')
             g-link(:to="work.node.path")
                 g-image(:src='work.node.cover' style='width: 100%')
-            p.name {{work.node.title}}
-    .row
-        .col-12
-            iframe(style='border: none;' width='100%' height='450' src='https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FdLd7Ssjaf4CaQnadfiFfKJ%2Ffigma-UI-challenge-example-by-rei%3Fnode-id%3D0%253A1' allowfullscreen='')
+            p.text-center.mt-2.mb-4 {{work.node.title}}
 
     .row
         .col-12
@@ -35,7 +32,7 @@ export default {
 </script>
 <page-query>
 query($page:Int) {
-    allWork(perPage:3, page: $page)@paginate{
+    allWork(perPage:9, page: $page)@paginate{
         pageInfo{
           currentPage
           perPage
@@ -95,6 +92,7 @@ query($page:Int) {
         .name {
             text-align: center;
             font-size: 0.85rem;
+            margin-bottom: 1rem;
 
         }
     }

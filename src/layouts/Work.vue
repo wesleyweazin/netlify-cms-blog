@@ -1,5 +1,5 @@
 <template lang="pug">
-  .contaier
+  .container
     Header
     .markdown-body
       slot

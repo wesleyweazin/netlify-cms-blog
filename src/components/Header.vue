@@ -18,3 +18,16 @@ header.header
   }
 </static-query>
 
+<style lang="scss" scoped>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 100px;
+}
+
+.nav__link {
+  margin-left: 20px;
+}
+</style>

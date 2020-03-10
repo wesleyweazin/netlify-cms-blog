@@ -41,7 +41,7 @@ module.exports = {
     {
       use: 'gridsome-plugin-netlify-cms-paths',
       options: {
-        contentTypes: ['Post','Work'],
+        contentTypes: ['Post','Work','Shot'],
         coverField: 'cover'
       }
     },

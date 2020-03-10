@@ -1,26 +1,25 @@
 <template lang="pug">
-Layout
-    .container
-        .row.mb-5
-            .col-sm-12.text-center
-                h1 文章列表
-        .row
-            .col-sm-12.post-list
-                .row.item(v-for='post in $page.allPost.edges' :key='post.id')
-                    .col-sm-8
-                        .item__content
-                            p.text-muted.small.mb-1 {{post.node.date}}
-                            h3.item__content__title.mb-2 {{post.node.title_zh}}
-                            p.item__content__tags
-                                g-link(v-for="tag in post.node.tags" :to='tag.path').mr-2 {{tag.id}}
-                            p.item__content__text(v-html='post.node.content.substring(0,100)')
-                            a.item__content__link(:href='post.node.path') 繼續閱讀
-                    .col-sm-4
-                        .item__image
-                            g-image(:src='post.node.cover')
-        .row
-            .col-sm-12
-                Pager(:info="$page.allPost.pageInfo")
+DefaultLayout
+    .row.mb-5
+        .col-sm-12.text-center
+            h1 文章列表
+    .row
+        .col-sm-12.post-list
+            .row.item(v-for='post in $page.allPost.edges' :key='post.id')
+                .col-sm-8
+                    .item__content
+                        p.text-muted.small.mb-1 {{post.node.date}}
+                        h3.item__content__title.mb-2 {{post.node.title_zh}}
+                        .item__content__tags
+                            g-link(v-for="tag in post.node.tags" :to='tag.path').text-secondary.mr-2 {{tag.id}}
+                        p.item__content__text(v-html='post.node.content.substring(0,100)')
+                        a.item__content__link(:href='post.node.path') 繼續閱讀
+                .col-sm-4
+                    .item__image
+                        g-image(:src='post.node.cover')
+    .row
+        .col-sm-12
+            Pager(:info="$page.allPost.pageInfo")
 </template>
 
 <page-query>
@@ -82,7 +81,14 @@ export default {
                 font-size: 1.8rem;
                 font-weight: 700;
             }
+            &__tags a{
+                &:before {
+                    content: '#';
+
+                }
+            }
         }
+        
     }
 }
 </style>

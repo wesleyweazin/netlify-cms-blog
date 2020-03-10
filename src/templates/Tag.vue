@@ -1,5 +1,5 @@
 <template lang="pug">
-    Layout
+    DefaultLayout
         .container
             .row.mb-4
                 .col-12
