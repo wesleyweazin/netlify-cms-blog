@@ -16,7 +16,8 @@
     "gridsome-plugin-sass-resources-loader": "0.0.2",
     "netlify-cms": "^2.9.1",
     "tailwindcss": "^1.2.0",
-    "vue-masonry": "^0.11.8"
+    "vue-masonry": "^0.11.8",
+    "vue-server-renderer": "^2.6.11"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",
